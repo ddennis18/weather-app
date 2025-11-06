@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/mobile.css">
+
+  <title>Weather app | Darius Dennis | Frontend Mentor</title>
+</head>
+
+<body>
+  <header>
+    <img src="assets/images/logo.svg" alt="" id="logo">
+    <div><img src="assets/images/icon-units.svg" alt="">Units<img src="assets/images/icon-dropdown.svg" alt=""></div>
+  </header>
+  <main>
+    <div id="hero-section">
+      <h1>How's the sky looking today?</h1>
+    </div>
+    <form action="" id="search">
+      <span>
+        <img src="assets/images/icon-search.svg" alt="">
+        <input type="text" placeholder="Search for city">
+      </span>
+
+      <button id="submit-btn">Search</button>
+    </form>
+    <section id="forecast">
+      <div id="forecast-container">
+        <div id="today">
+          <div>
+            <h2>---,---</h2>
+            <h6>--------, ------ 00, 20--</h6>
+          </div>
+          <div>
+            <h1>--&deg;</h1>
+          </div>
+        </div>
+        <div id="metrics">
+          <div>
+            <h5 class="metric-type">Feels Like</h5>
+            <h2 class="metric">--</h2>
+          </div>
+          <div>
+            <h5 class="metric-type">Feels Like</h5>
+            <h2 class="metric">--</h2>
+          </div>
+          <div>
+            <h5 class="metric-type">Feels Like</h5>
+            <h2 class="metric">--</h2>
+          </div>
+          <div>
+            <h5 class="metric-type">Feels Like</h5>
+            <h2 class="metric">--</h2>
+          </div>
+        </div>
+        <div>
+          Daily forecast
+        </div>
+        <div id="daily-forecast">
+          <div id="daily-forecast-1">
+            <h5 id="">---</h5>
+            <img src="assets/images/icon-drizzle.webp" alt="">
+            <div>
+              <span>--&deg;</span>&nbsp;
+              <span>--&deg;</span>
+            </div>
+          </div>
+          <div id="daily-forecast-2">
+            <h5 id="">---</h5>
+            <img src="assets/images/icon-drizzle.webp" alt="">
+            <div>
+              <span>--&deg;</span>&nbsp;
+              <span>--&deg;</span>
+            </div>
+          </div>
+          <div id="daily-forecast-3">
+            <h5 id="">---</h5>
+            <img src="assets/images/icon-drizzle.webp" alt="">
+            <div>
+              <span>--&deg;</span>&nbsp;
+              <span>--&deg;</span>
+            </div>
+          </div>
+          <div id="daily-forecast-4">
+            <h5 id="">---</h5>
+            <img src="assets/images/icon-drizzle.webp" alt="">
+            <div>
+              <span>--&deg;</span>&nbsp;
+              <span>--&deg;</span>
+            </div>
+          </div>
+          <div id="daily-forecast-5">
+            <h5 id="">---</h5>
+            <img src="assets/images/icon-drizzle.webp" alt="">
+            <div>
+              <span>--&deg;</span>&nbsp;
+              <span>--&deg;</span>
+            </div>
+          </div>
+          <div id="daily-forecast-6">
+            <h5 id="">---</h5>
+            <img src="assets/images/icon-drizzle.webp" alt="">
+            <div>
+              <span>--&deg;</span>&nbsp;
+              <span>--&deg;</span>
+            </div>
+          </div>
+          <div id="daily-forecast-7">
+            <h5 id="">---</h5>
+            <img src="assets/images/icon-drizzle.webp" alt="">
+            <div>
+              <span>--&deg;</span>&nbsp;
+              <span>--&deg;</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="hourly-forecast-container">
+        <div>
+          <span>Hourly forecast</span>
+          <select name="day-selector" id="day-selector"><img src="assets/images/icon-dropdown.svg" alt="" />
+            <option value="Sunday">Sunday</option>
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
+          </select>
+        </div>
+        <div class="hourly-forecast" id="hr-fr-1">
+          <img src="assets/images/icon-loading.svg" alt="" srcset="">
+          <span>--PM</span>
+          <span>--&deg;</span>
+        </div>
+        <div class="hourly-forecast" id="hr-fr-2">
+          <img src="assets/images/icon-loading.svg" alt="" srcset="">
+          <span>--PM</span>
+          <span>--&deg;</span>
+        </div>
+        <div class="hourly-forecast" id="hr-fr-3">
+          <img src="assets/images/icon-loading.svg" alt="" srcset="">
+          <span>--PM</span>
+          <span>--&deg;</span>
+        </div>
+        <div class="hourly-forecast" id="hr-fr-4">
+          <img src="assets/images/icon-loading.svg" alt="" srcset="">
+          <span>--PM</span>
+          <span>--&deg;</span>
+        </div>
+        <div class="hourly-forecast" id="hr-fr-5">
+          <img src="assets/images/icon-loading.svg" alt="" srcset="">
+          <span>--PM</span>
+          <span>--&deg;</span>
+        </div>
+        <div class="hourly-forecast" id="hr-fr-6">
+          <img src="assets/images/icon-loading.svg" alt="" srcset="">
+          <span>--PM</span>
+          <span>--&deg;</span>
+        </div>
+        <div class="hourly-forecast" id="hr-fr-7">
+          <img src="assets/images/icon-loading.svg" alt="" srcset="">
+          <span>--PM</span>
+          <span>--&deg;</span>
+        </div>
+        <div class="hourly-forecast" id="hr-fr-8">
+          <img src="assets/images/icon-loading.svg" alt="" srcset="">
+          <span>--PM</span>
+          <span>--&deg;</span>
+        </div>
+        <div class="hourly-forecast" id="hr-fr-9">
+          <img src="assets/images/icon-loading.svg" alt="" srcset="">
+          <span>--PM</span>
+          <span>--&deg;</span>
+        </div>
+        <div class="hourly-forecast" id="hr-fr-10">
+          <img src="assets/images/icon-loading.svg" alt="" srcset="">
+          <span>--PM</span>
+          <span>--&deg;</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!--
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+  </div>-->
+</body>
+
+</html>
