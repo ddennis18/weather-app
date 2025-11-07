@@ -2,23 +2,26 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;700&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/mobile.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/mobile.css" />
 
   <title>Weather app | Darius Dennis | Frontend Mentor</title>
 </head>
 
 <body>
   <header>
-    <img src="assets/images/logo.svg" alt="" id="logo">
-    <div><img src="assets/images/icon-units.svg" alt="">Units<img src="assets/images/icon-dropdown.svg" alt=""></div>
+    <img src="assets/images/logo.svg" alt="" id="logo" />
+    <div>
+      <img src="assets/images/icon-units.svg" alt="" />Units<img src="assets/images/icon-dropdown.svg" alt="" />
+    </div>
   </header>
   <main>
     <div id="hero-section">
@@ -26,8 +29,10 @@
     </div>
     <form action="" id="search">
       <span>
-        <img src="assets/images/icon-search.svg" alt="">
-        <input type="text" placeholder="Search for city">
+        <img src="assets/images/icon-search.svg" alt="" />
+        <input type="text" placeholder="Search for city" />
+        <div id="search-suggestions">
+        </div>
       </span>
 
       <button id="submit-btn">Search</button>
@@ -46,79 +51,77 @@
         <div id="metrics">
           <div>
             <h5 class="metric-type">Feels Like</h5>
-            <h2 class="metric">--</h2>
+            <h2 class="metric" id="apparent-temperature">--</h2>
           </div>
           <div>
-            <h5 class="metric-type">Feels Like</h5>
-            <h2 class="metric">--</h2>
+            <h5 class="metric-type">Relative Humidity</h5>
+            <h2 class="metric" id="relative-humidity">--</h2>
           </div>
           <div>
-            <h5 class="metric-type">Feels Like</h5>
-            <h2 class="metric">--</h2>
+            <h5 class="metric-type">Wind Speed</h5>
+            <h2 class="metric" id="current-windspeed">--</h2>
           </div>
           <div>
-            <h5 class="metric-type">Feels Like</h5>
-            <h2 class="metric">--</h2>
+            <h5 class="metric-type">Precipitation</h5>
+            <h2 class="metric" id="current-precipitaion">--</h2>
           </div>
         </div>
-        <div>
-          Daily forecast
-        </div>
+        <div>Daily forecast</div>
         <div id="daily-forecast">
           <div id="daily-forecast-1">
             <h5 id="">---</h5>
-            <img src="assets/images/icon-drizzle.webp" alt="">
+            <img src="assets/images/icon-loading.svg" alt="" />
             <div>
-              <span>--&deg;</span>&nbsp;
-              <span>--&deg;</span>
+              <span class="max-temp">--&deg;</span>&nbsp;
+              <span class="min-temp">--&deg;</span>
             </div>
           </div>
           <div id="daily-forecast-2">
             <h5 id="">---</h5>
-            <img src="assets/images/icon-drizzle.webp" alt="">
+            <img src="assets/images/icon-loading.svg" alt="" />
             <div>
-              <span>--&deg;</span>&nbsp;
-              <span>--&deg;</span>
+              <span class="max-temp">--&deg;</span>&nbsp;
+              <span class="min-temp">--&deg;</span>
             </div>
           </div>
           <div id="daily-forecast-3">
             <h5 id="">---</h5>
-            <img src="assets/images/icon-drizzle.webp" alt="">
+            <img src="assets/images/icon-loading.svg" alt="" />
             <div>
-              <span>--&deg;</span>&nbsp;
-              <span>--&deg;</span>
+              <span class="max-temp">--&deg;</span>&nbsp;
+              <span class="min-temp">--&deg;</span>
             </div>
           </div>
           <div id="daily-forecast-4">
             <h5 id="">---</h5>
-            <img src="assets/images/icon-drizzle.webp" alt="">
+            <img src="assets/images/icon-loading.svg" alt="" />
             <div>
-              <span>--&deg;</span>&nbsp;
-              <span>--&deg;</span>
+              <span class="max-temp">--&deg;</span>&nbsp;
+              <span class="min-temp">--&deg;</span>
             </div>
           </div>
           <div id="daily-forecast-5">
             <h5 id="">---</h5>
-            <img src="assets/images/icon-drizzle.webp" alt="">
+            <img src="assets/images/icon-loading.svg" alt="" />
             <div>
-              <span>--&deg;</span>&nbsp;
-              <span>--&deg;</span>
+              <span class="max-temp">--&deg;</span>&nbsp;
+              <span class="min-temp">--&deg;</span>
             </div>
           </div>
           <div id="daily-forecast-6">
             <h5 id="">---</h5>
-            <img src="assets/images/icon-drizzle.webp" alt="">
+            <img src="assets/images/icon-loading.svg" alt="" />
             <div>
-              <span>--&deg;</span>&nbsp;
-              <span>--&deg;</span>
+              <span class="max-temp">--&deg;</span>&nbsp;
+              <span class="min-temp">--&deg;</span>
             </div>
           </div>
           <div id="daily-forecast-7">
             <h5 id="">---</h5>
-            <img src="assets/images/icon-drizzle.webp" alt="">
+            <img src="assets/images/icon-loading.svg" alt="" />
             <div>
-              <span>--&deg;</span>&nbsp;
-              <span>--&deg;</span>
+              <span class="max-temp">--&deg;</span>&nbsp;
+              <span class="min-temp">--&deg;</span>
             </div>
           </div>
         </div>
@@ -126,7 +129,8 @@
       <div id="hourly-forecast-container">
         <div>
           <span>Hourly forecast</span>
-          <select name="day-selector" id="day-selector"><img src="assets/images/icon-dropdown.svg" alt="" />
+          <select name="day-selector" id="day-selector" value="Sunday">
+            <img src="assets/images/icon-dropdown.svg" alt="" />
             <option value="Sunday">Sunday</option>
             <option value="Monday">Monday</option>
             <option value="Tuesday">Tuesday</option>
@@ -137,64 +141,255 @@
           </select>
         </div>
         <div class="hourly-forecast" id="hr-fr-1">
-          <img src="assets/images/icon-loading.svg" alt="" srcset="">
+          <img src="assets/images/icon-loading.svg" alt="" srcset="" />
           <span>--PM</span>
           <span>--&deg;</span>
         </div>
         <div class="hourly-forecast" id="hr-fr-2">
-          <img src="assets/images/icon-loading.svg" alt="" srcset="">
+          <img src="assets/images/icon-loading.svg" alt="" srcset="" />
           <span>--PM</span>
           <span>--&deg;</span>
         </div>
         <div class="hourly-forecast" id="hr-fr-3">
-          <img src="assets/images/icon-loading.svg" alt="" srcset="">
+          <img src="assets/images/icon-loading.svg" alt="" srcset="" />
           <span>--PM</span>
           <span>--&deg;</span>
         </div>
         <div class="hourly-forecast" id="hr-fr-4">
-          <img src="assets/images/icon-loading.svg" alt="" srcset="">
+          <img src="assets/images/icon-loading.svg" alt="" srcset="" />
           <span>--PM</span>
           <span>--&deg;</span>
         </div>
         <div class="hourly-forecast" id="hr-fr-5">
-          <img src="assets/images/icon-loading.svg" alt="" srcset="">
+          <img src="assets/images/icon-loading.svg" alt="" srcset="" />
           <span>--PM</span>
           <span>--&deg;</span>
         </div>
         <div class="hourly-forecast" id="hr-fr-6">
-          <img src="assets/images/icon-loading.svg" alt="" srcset="">
+          <img src="assets/images/icon-loading.svg" alt="" srcset="" />
           <span>--PM</span>
           <span>--&deg;</span>
         </div>
         <div class="hourly-forecast" id="hr-fr-7">
-          <img src="assets/images/icon-loading.svg" alt="" srcset="">
+          <img src="assets/images/icon-loading.svg" alt="" srcset="" />
           <span>--PM</span>
           <span>--&deg;</span>
         </div>
         <div class="hourly-forecast" id="hr-fr-8">
-          <img src="assets/images/icon-loading.svg" alt="" srcset="">
+          <img src="assets/images/icon-loading.svg" alt="" srcset="" />
           <span>--PM</span>
           <span>--&deg;</span>
         </div>
         <div class="hourly-forecast" id="hr-fr-9">
-          <img src="assets/images/icon-loading.svg" alt="" srcset="">
+          <img src="assets/images/icon-loading.svg" alt="" srcset="" />
           <span>--PM</span>
           <span>--&deg;</span>
         </div>
         <div class="hourly-forecast" id="hr-fr-10">
-          <img src="assets/images/icon-loading.svg" alt="" srcset="">
+          <img src="assets/images/icon-loading.svg" alt="" srcset="" />
           <span>--PM</span>
           <span>--&deg;</span>
         </div>
       </div>
     </section>
   </main>
+  <script>
+    let latitude = 6.5244
+    let longitude = 3.3792
+    let API_URL = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}`
+    let currentWeatherData = null
+    let weekWeatherData = null
+    let hourlyWeatherData = null
+    let city = "Benin"
+    let selectedDay = ""
+    const todays_date = new Date()
+    const currentTempEl = document.querySelector('#today h1')
+    const cityEl = document.querySelector('#today h2')
+    const dateTimeEl = document.querySelector('#today h6')
+    const apparentTemperatureEl = document.querySelector('#apparent-temperature')
+    const relativeHumidityEl = document.querySelector('#relative-humidity')
+    const currentWindspeedEl = document.querySelector('#current-windspeed')
+    const currentPrecipitationEl = document.querySelector('#current-precipitaion')
+    const dailyForecastEls = document.querySelectorAll('#daily-forecast > div')
+    const hourlyForecastEls = document.querySelectorAll('.hourly-forecast')
+    const daySelectorEl = document.querySelector('#day-selector')
+    const searchInputEl = document.querySelector('#search input')
+    const searchSuggestionsEl = document.querySelector('#search-suggestions')
+    const searchBtnEl = document.querySelector('#submit-btn')
 
-  <!--
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
-    Coded by <a href="#">Your Name Here</a>.
-  </div>-->
+    daySelectorEl.value = todays_date.toLocaleDateString('en-US', { weekday: 'long' })
+    selectedDay = todays_date.toISOString().split("T")[0];
+
+    searchBtnEl.addEventListener('click', async (e) => {
+      e.preventDefault();
+      city = searchInputEl.value;
+      await updateCurrentWeatherUI();
+    })
+
+    searchInputEl.addEventListener('focus', () => {
+      searchSuggestionsEl.style.display = 'block';
+      console.log('focused');
+    })
+
+    searchInputEl.addEventListener('blur', () => {
+      setTimeout(() => {
+        searchSuggestionsEl.style.display = 'none';
+      }, 100);
+      console.log('blurred');
+    })
+
+    searchInputEl.addEventListener('input', async () => {
+      const query = searchInputEl.value;
+      if (query.length < 2) {
+        searchSuggestionsEl.innerHTML = '';
+        return;
+      }
+      const response = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(query)}&count=5`)
+      const data = await response.json()
+      searchSuggestionsEl.innerHTML = '';
+      if (data.results) {
+        data.results.forEach((location) => {
+          const div = document.createElement('div');
+          div.textContent = `${location.name}, ${location.country}`;
+          console.log(location);
+          div.addEventListener('click', async (e) => {
+            e.stopPropagation();
+            searchInputEl.value = `${location.name}, ${location.country}`;
+            searchSuggestionsEl.innerHTML = '';
+            e.preventDefault();
+            city = searchInputEl.value;
+            await updateCurrentWeatherUI();
+          });
+          searchSuggestionsEl.appendChild(div);
+        });
+      }
+    })
+
+    daySelectorEl.addEventListener('change', async () => {
+      const s = daySelectorEl.value;
+      const dayIndex = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"].indexOf(s);
+      const currentDayIndex = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"].indexOf(new Date().toLocaleDateString('en-US', { weekday: 'long' }));
+      let dayDifference = dayIndex - currentDayIndex;
+      if (dayDifference < 0) dayDifference += 7; // Adjust for next week
+      const targetDate = new Date();
+      targetDate.setDate(targetDate.getDate() + dayDifference);
+      const dayString = targetDate.toISOString().split('T')[0];
+      selectedDay = dayString;
+      await refreshHourlyForecastUI();
+    })
+
+    async function getCoordinates(c) {
+      const response = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(c)}`)
+      const data = await response.json()
+
+      if (data.length === 0) {
+        return [null, null]
+      }
+
+      const { latitude, longitude } = data.results[0]
+      return [latitude, longitude]
+    }
+
+    function weatherIconSelector(weatherCode) {
+      if (weatherCode === 0) {
+        return 'assets/images/icon-sunny.webp'
+      } else if (weatherCode === 1 || weatherCode === 2 || weatherCode === 3) {
+        return 'assets/images/icon-partly-cloudy.webp'
+      } else if (weatherCode === 45 || weatherCode === 48) {
+        return 'assets/images/icon-overcast.webp'
+      } else if (weatherCode === 51 || weatherCode === 53 || weatherCode === 55 || weatherCode === 56 || weatherCode === 57) {
+        return 'assets/images/icon-drizzle.webp'
+      } else if (weatherCode === 61 || weatherCode === 63 || weatherCode === 65 || weatherCode === 66 || weatherCode === 67) {
+        return 'assets/images/icon-rain.webp'
+      } else if (weatherCode === 71 || weatherCode === 73 || weatherCode === 75 || weatherCode === 77) {
+        return 'assets/images/icon-snowfall.webp'
+      } else if (weatherCode === 80 || weatherCode === 81 || weatherCode === 82) {
+        return 'assets/images/icon-rain.webp'
+      } else if (weatherCode === 95 || weatherCode === 96 || weatherCode === 99) {
+        return 'assets/images/icon-storm.webp'
+      } else {
+        return 'assets/images/icon-loading.svg' // default icon
+      }
+    }
+
+    async function fetchCurrentWeather() {
+      try {
+        let response = await fetch(API_URL + '&current=temperature,apparent_temperature,relative_humidity_2m,precipitation,wind_speed_10m')
+        const current_data = await response.json()
+        return current_data
+      } catch (error) {
+        return null
+      }
+    }
+
+    async function fetchWeekWeather() {
+      try {
+        const response = await fetch(
+          API_URL +
+          '&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,weather_code&forecast_days=7'
+        )
+        const daily_data = await response.json()
+        return daily_data
+      } catch (error) {
+        return null
+      }
+    }
+
+    async function fetchHourlyWeather(day) {
+      try {
+        const response = await fetch(
+          API_URL + '&hourly=temperature,apparent_temperature,precipitation,weather_code&start_date=' + day + '&end_date=' + day
+        )
+        const hourly_data = await response.json()
+        return hourly_data
+      } catch (error) {
+        return null
+      }
+    }
+
+    async function updateCurrentWeatherUI() {
+      [latitude, longitude] = await getCoordinates(city)
+      API_URL = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}`
+      currentWeatherData = await fetchCurrentWeather()
+      cityEl.textContent = city
+      dateTimeEl.textContent = todays_date.toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+      });
+
+      // Update all fields displaying Current Weather Data
+      currentTempEl.textContent = `${currentWeatherData.current.temperature}°`
+      apparentTemperatureEl.textContent = `${currentWeatherData.current.apparent_temperature}°C`
+      relativeHumidityEl.textContent = `${currentWeatherData.current.relative_humidity_2m}%`
+      currentWindspeedEl.textContent = `${currentWeatherData.current.wind_speed_10m} km/h`
+      currentPrecipitationEl.textContent = `${currentWeatherData.current.precipitation} mm`
+
+      weekForecastData = await fetchWeekWeather()
+      dailyForecastEls.forEach(async (el, index) => {
+        const maxTemp = weekForecastData.daily.temperature_2m_max[index]
+        const minTemp = weekForecastData.daily.temperature_2m_min[index]
+        const day = new Date(weekForecastData.daily.time[index]).toLocaleDateString('en-US', { weekday: 'short' })
+        el.querySelector('.max-temp').textContent = `${maxTemp}°`
+        el.querySelector('.min-temp').textContent = `${minTemp}°`
+        el.querySelector('h5').textContent = day
+        el.querySelector('img').src = weatherIconSelector(weekForecastData.daily.weather_code[index])
+      })
+      await refreshHourlyForecastUI();
+    }
+
+    async function refreshHourlyForecastUI() {
+      hourlyWeatherData = await fetchHourlyWeather(selectedDay);
+      hourlyForecastEls.forEach((h, index) => {
+        h.querySelector("img").src = weatherIconSelector(hourlyWeatherData.hourly.weather_code[index])
+        const s = h.querySelectorAll("span")
+        s[0].innerText = hourlyWeatherData.hourly.time[index].split('T')[1]
+        s[1].innerText = hourlyWeatherData.hourly.temperature[index] + '°'
+      })
+    }
+
+    updateCurrentWeatherUI()
+  </script>
 </body>
 
 </html>
