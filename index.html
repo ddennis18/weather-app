@@ -20,7 +20,26 @@
   <header>
     <img src="assets/images/logo.svg" alt="" id="logo" />
     <div>
-      <img src="assets/images/icon-units.svg" alt="" />Units<img src="assets/images/icon-dropdown.svg" alt="" />
+      <span id="unit-selector-dropdown-btn"><img src="assets/images/icon-units.svg" alt="" />Units<img src="assets/images/icon-dropdown.svg" alt="" /></span>
+      <div id="unit-selector-dropdown">
+        <div class="unit-option" id="unit-system-changer">Switch To Imperial <img src="/assets/images/icon-checkmark.svg" alt=""></div>
+        <div id="temp-unit">
+          <div class="unit-type">Temperature</div>
+          <div class="unit-option metric">Celsius (&deg;C) <img src="/assets/images/icon-checkmark.svg" alt=""></div>
+          <div class="unit-option imperial">Farenheit (&deg;F) <img src="/assets/images/icon-checkmark.svg" alt="">
+          </div>
+        </div>
+        <div id="wind-speed-unit">
+          <div class="unit-type">Wind Speed</div>
+          <div class="unit-option metric">km/h <img src="/assets/images/icon-checkmark.svg" alt=""></div>
+          <div class="unit-option imperial">mph <img src="/assets/images/icon-checkmark.svg" alt=""></div>
+        </div>
+        <div id="precip-unit">
+          <div class="unit-type">Precipitation</div>
+          <div class="unit-option metric">Millimeters (mm) <img src="/assets/images/icon-checkmark.svg" alt=""></div>
+          <div class="unit-option imperial">Inches (in) <img src="/assets/images/icon-checkmark.svg" alt=""></div>
+        </div>
+      </div>
     </div>
   </header>
   <main>
@@ -202,6 +221,11 @@
     let hourlyWeatherData = null
     let city = "Benin"
     let selectedDay = ""
+    let units = {
+      temperature_unit: "celsius",
+      windspeed_unit: "kmh",
+      precipitation_unit: "mm"
+    }
     const todays_date = new Date()
     const currentTempEl = document.querySelector('#today h1')
     const cityEl = document.querySelector('#today h2')
@@ -216,9 +240,114 @@
     const searchInputEl = document.querySelector('#search input')
     const searchSuggestionsEl = document.querySelector('#search-suggestions')
     const searchBtnEl = document.querySelector('#submit-btn')
+    const temperatureUnitSelectorEl = document.querySelector("#temp-unit")
+    const windSpeedUnitSelectorEl = document.querySelector("#wind-speed-unit")
+    const precipitationUnitSelectorEl = document.querySelector("#precip-unit")
+    const unitSystemToggleEl = document.querySelector("#unit-system-changer")
+    const unitSelectorDropdownBtnEl = document.querySelector("#unit-selector-dropdown-btn")
+    const unitSelectorDropdownEl = document.querySelector("#unit-selector-dropdown")
 
+    unitSelectorDropdownEl.style.display = "none"
     daySelectorEl.value = todays_date.toLocaleDateString('en-US', { weekday: 'long' })
     selectedDay = todays_date.toISOString().split("T")[0];
+
+    unitSelectorDropdownBtnEl.addEventListener("click", () => {
+      if (unitSelectorDropdownEl.style.display === "block") {
+        unitSelectorDropdownEl.style.display = "none"
+      }
+      else {
+        unitSelectorDropdownEl.style.display = "block"
+      }
+    })
+
+    unitSystemToggleEl.addEventListener("click", () => {
+      const isMetric = units.temperature_unit === "celsius"
+      if (isMetric) {
+        //switch to imperial
+        units.temperature_unit = "fahrenheit"
+        units.windspeed_unit = "mph"
+        units.precipitation_unit = "inch"
+        //update UI selectors
+        temperatureUnitSelectorEl.querySelector(".metric>img").style.visibility = "hidden"
+        temperatureUnitSelectorEl.querySelector(".imperial>img").style.visibility = "visible"
+        windSpeedUnitSelectorEl.querySelector(".metric>img").style.visibility = "hidden"
+        windSpeedUnitSelectorEl.querySelector(".imperial>img").style.visibility = "visible"
+        precipitationUnitSelectorEl.querySelector(".metric>img").style.visibility = "hidden"
+        precipitationUnitSelectorEl.querySelector(".imperial>img").style.visibility = "visible"
+        unitSystemToggleEl.textContent = "Switch To Metric "
+      }
+      else {
+        //switch to metric
+        units.temperature_unit = "celsius"
+        units.windspeed_unit = "kmh"
+        units.precipitation_unit = "mm"
+        //update UI selectors
+        temperatureUnitSelectorEl.querySelector(".imperial>img").style.visibility = "hidden"
+        temperatureUnitSelectorEl.querySelector(".metric>img").style.visibility = "visible"
+        windSpeedUnitSelectorEl.querySelector(".imperial>img").style.visibility = "hidden"
+        windSpeedUnitSelectorEl.querySelector(".metric>img").style.visibility = "visible"
+        precipitationUnitSelectorEl.querySelector(".imperial>img").style.visibility = "hidden"
+        precipitationUnitSelectorEl.querySelector(".metric>img").style.visibility = "visible"
+        unitSystemToggleEl.textContent = "Switch To Imperial "
+      }
+      updateCurrentWeatherUI()
+    })
+
+    temperatureUnitSelectorEl.querySelectorAll(".unit-option").forEach((e) => {
+      e.addEventListener("click", () => {
+        const unit_type = e.classList[1];
+        e.querySelector("img").style.visibility = "visible"
+        e.parentNode.querySelector(`.${unit_type === "metric" ? "imperial" : "metric"}>img`).style.visibility = 'hidden'
+        if (unit_type === "metric") {
+          units.temperature_unit = "celsius"
+        }
+        else {
+          units.temperature_unit = "fahrenheit"
+        }
+        updateCurrentWeatherUI()
+      })
+    })
+
+    windSpeedUnitSelectorEl.querySelectorAll(".unit-option").forEach((e) => {
+      e.addEventListener("click", () => {
+        const unit_type = e.classList[1];
+        e.querySelector("img").style.visibility = "visible"
+        e.parentNode.querySelector(`.${unit_type === "metric" ? "imperial" : "metric"}>img`).style.visibility = 'hidden'
+        if (unit_type === "metric") {
+          units.windspeed_unit = "kmh"
+        }
+        else {
+          units.windspeed_unit = "mph"
+        }
+        updateCurrentWeatherUI()
+      })
+    })
+
+    precipitationUnitSelectorEl.querySelectorAll(".unit-option").forEach((e) => {
+      e.addEventListener("click", () => {
+        const unit_type = e.classList[1];
+        e.querySelector("img").style.visibility = "visible"
+        e.parentNode.querySelector(`.${unit_type === "metric" ? "imperial" : "metric"}>img`).style.visibility = 'hidden'
+        if (unit_type === "metric") {
+          units.precipitation_unit = "mm"
+        }
+        else {
+          units.precipitation_unit = "inch"
+        }
+        updateCurrentWeatherUI()
+      })
+    })
+
+    function updateAPIURL(latitude, longitude) {
+      API_URL = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}`;
+      let unitEncode = ""
+      //compute units
+      for(u in units){
+        unitEncode += `&${u}=${units[u]}`
+      }
+
+      API_URL+=unitEncode;
+    }
 
     searchBtnEl.addEventListener('click', async (e) => {
       e.preventDefault();
@@ -228,14 +357,12 @@
 
     searchInputEl.addEventListener('focus', () => {
       searchSuggestionsEl.style.display = 'block';
-      console.log('focused');
     })
 
     searchInputEl.addEventListener('blur', () => {
       setTimeout(() => {
         searchSuggestionsEl.style.display = 'none';
       }, 100);
-      console.log('blurred');
     })
 
     searchInputEl.addEventListener('input', async () => {
@@ -251,7 +378,6 @@
         data.results.forEach((location) => {
           const div = document.createElement('div');
           div.textContent = `${location.name}, ${location.country}`;
-          console.log(location);
           div.addEventListener('click', async (e) => {
             e.stopPropagation();
             searchInputEl.value = `${location.name}, ${location.country}`;
@@ -349,7 +475,7 @@
 
     async function updateCurrentWeatherUI() {
       [latitude, longitude] = await getCoordinates(city)
-      API_URL = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}`
+      updateAPIURL(latitude, longitude)
       currentWeatherData = await fetchCurrentWeather()
       cityEl.textContent = city
       dateTimeEl.textContent = todays_date.toLocaleDateString("en-US", {
@@ -360,10 +486,10 @@
 
       // Update all fields displaying Current Weather Data
       currentTempEl.textContent = `${currentWeatherData.current.temperature}°`
-      apparentTemperatureEl.textContent = `${currentWeatherData.current.apparent_temperature}°C`
+      apparentTemperatureEl.textContent = `${currentWeatherData.current.apparent_temperature}°${units.temperature_unit === 'celsius' ? 'C' : 'F'}`
       relativeHumidityEl.textContent = `${currentWeatherData.current.relative_humidity_2m}%`
-      currentWindspeedEl.textContent = `${currentWeatherData.current.wind_speed_10m} km/h`
-      currentPrecipitationEl.textContent = `${currentWeatherData.current.precipitation} mm`
+      currentWindspeedEl.textContent = `${currentWeatherData.current.wind_speed_10m}${units.windspeed_unit === 'kmh' ? ' km/h' : ' mph'}`
+      currentPrecipitationEl.textContent = `${currentWeatherData.current.precipitation} ${units.precipitation_unit === 'mm' ? ' mm' : ' in'}`
 
       weekForecastData = await fetchWeekWeather()
       dailyForecastEls.forEach(async (el, index) => {

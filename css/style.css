@@ -29,7 +29,8 @@ header {
   padding: 8px;
 }
 
-header div {
+header > div {
+  position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -37,7 +38,65 @@ header div {
 
   background-color: #25253f;
   padding: 8px;
+  border-radius: 8px;
+}
+
+header > div > span {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+header > div > div > div {
+  border-bottom: 1px solid #2f2f49;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+#unit-selector-dropdown {
+  position: absolute;
+  display: flex;
+  bottom: -300px;
+  left: -20px;
+  flex-direction: column;
+  gap: 16px;
+  width: 200px;
+  background-color: #25253f;
+  padding: 8px;
   border-radius: 4px;
+  z-index: 9999;
+  font-size: 0.7rem;
+}
+
+.unit-option {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.unit-option.metric img {
+  visibility: visible;
+}
+
+.unit-option:hover {
+  background-color: #2f2f49;
+}
+
+.unit-option img {
+  visibility: hidden;
+}
+
+.unit-type {
+  font-size: 0.6rem;
+  font-weight: 2 00;
 }
 
 #hero-section {

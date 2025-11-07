@@ -4,7 +4,7 @@
   }
 
   #logo {
-    width: 100px;
+    width: 200px;
   }
 
   header div {
@@ -12,9 +12,39 @@
     gap: 5px;
     padding: 6px;
   }
+  header > div > span {
+    width: 70px;
+    gap: 2px;
+  }
 
   header > div > img {
     width: 10px;
+  }
+  header > div > div > div {
+    gap: 4px;
+  }
+
+  #unit-selector-dropdown {
+    bottom: -310px;
+    left: -20px;
+    gap: 8px;
+    width: 150px;
+    padding: 8px;
+    z-index: 9999;
+    font-size: 1rem;
+  }
+
+  .unit-option {
+    padding: 4px;
+  }
+
+  .unit-option:hover {
+    background-color: #2f2f49;
+  }
+
+  .unit-type {
+    font-size: 0.8rem;
+    font-weight: 2 00;
   }
 
   body {
@@ -82,10 +112,10 @@
     font-size: 3.5rem;
   }
 
-  #today h2{
+  #today h2 {
     font-size: 2rem;
   }
-  #today h6{
+  #today h6 {
     font-size: 1rem;
   }
 
@@ -103,7 +133,7 @@
   }
 
   #metrics > div > h5 {
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
   #metrics > div > h2 {
     font-size: 2rem;
@@ -119,7 +149,6 @@
     font-size: 1rem;
   }
 
-  
   #daily-forecast > div > img {
     width: 32px;
   }
@@ -132,10 +161,10 @@
     width: 4px;
   }
 
-  .hourly-forecast>img{
+  .hourly-forecast > img {
     width: 32px;
   }
-  .hourly-forecast>span{
-    font-size:1.5rem;
+  .hourly-forecast > span {
+    font-size: 1.5rem;
   }
 }
