@@ -9,6 +9,10 @@
     box-sizing: border-box;
 }
 
+:root{
+    font-size: 18px;
+}
+
 body {
     background: radial-gradient(circle at bottom, #25253f,#02012b);
     max-width: 75vw;
