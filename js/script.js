@@ -167,7 +167,7 @@ searchInputEl.addEventListener('focus', () => {
 searchInputEl.addEventListener('blur', () => {
   setTimeout(() => {
     searchSuggestionsEl.style.display = 'none'
-  }, 100)
+  }, 500)
 })
 
 searchInputEl.addEventListener('input', async () => {
