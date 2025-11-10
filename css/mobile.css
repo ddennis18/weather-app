@@ -4,7 +4,7 @@
   }
 
   #logo {
-    width: 200px;
+    width: 100px;
   }
 
   header div {
@@ -48,7 +48,7 @@
   }
 
   body {
-    max-width: 80vw;
+    max-width: 95vw;
   }
 
   #hero-section h1 {

@@ -1,10 +1,10 @@
-let latitude = 6.5244
-let longitude = 3.3792
+let latitude = 0
+let longitude = 0
 let API_URL = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}`
 let currentWeatherData = null
 let weekWeatherData = null
 let hourlyWeatherData = null
-let city = 'Benin'
+let city = 'Nigeria'
 let selectedDay = ''
 let units = {
   temperature_unit: 'celsius',
@@ -14,6 +14,7 @@ let units = {
 const todays_date = new Date()
 const currentTempEl = document.querySelector('#today h1')
 const cityEl = document.querySelector('#today h2')
+const currentWeatherEl = document.querySelector('#today img')
 const dateTimeEl = document.querySelector('#today h6')
 const apparentTemperatureEl = document.querySelector('#apparent-temperature')
 const relativeHumidityEl = document.querySelector('#relative-humidity')
@@ -287,7 +288,7 @@ async function fetchCurrentWeather () {
   try {
     let response = await fetch(
       API_URL +
-        '&current=temperature,apparent_temperature,relative_humidity_2m,precipitation,wind_speed_10m'
+        '&current=temperature,apparent_temperature,relative_humidity_2m,precipitation,wind_speed_10m,weather_code'
     )
     const current_data = await response.json()
     return current_data
@@ -338,6 +339,9 @@ async function updateCurrentWeatherUI () {
 
   // Update all fields displaying Current Weather Data
   currentTempEl.textContent = `${currentWeatherData.current.temperature}°`
+  currentWeatherEl.src = weatherIconSelector(
+    currentWeatherData.current.weather_code
+  )
   apparentTemperatureEl.textContent = `${
     currentWeatherData.current.apparent_temperature
   }°${units.temperature_unit === 'celsius' ? 'C' : 'F'}`
