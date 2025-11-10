@@ -32,7 +32,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Add live site URL here](https://https://dd-weather-app.vercel.app/)
 
 ## My process
 
@@ -52,6 +52,5 @@ I also learnd alot on how to communicate with APIs
 
 ## Author
 
-- Website - [Dennis]()
 - Frontend Mentor - [@ddennis18](https://www.frontendmentor.io/profile/ddennis18)
 - Twitter - [@os_dennis18](https://www.twitter.com/os_dennis18)
